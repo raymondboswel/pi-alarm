@@ -1,0 +1,19 @@
+<nav class="my-banner">
+    <div class="logo-container">
+            <a class="brand" href="javascript:void(0)" routerLink="home"><img class="logo" src="assets/dl_icons_raspberrypi-new.png"/>AlarmBerry</a>
+    </div>
+    <div class="right-menu-item-list">
+        <!--<div class="name menu-item">
+            <h4>Welcome {{authenticationService.getUser()}}</h4>
+        </div>-->
+        <div class="dropdown menu-item" dropdown>
+
+                <ul class="dropdown-menu" dropdownMenu>
+                    <!--<li><a href="#">Profile</a></li>-->
+                    <!--<li class="divider"></li>-->
+                    <li><a href="javascript:void(0)" (click)="signOut()">Sign out</a></li>
+                </ul>
+        </div>
+    </div>
+
+</nav>
