@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AlarmsService } from '../alarms.service';
+import { Alarm } from '../alarm';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-alarms-detail',
@@ -6,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alarms-detail.component.css']
 })
 export class AlarmsDetailComponent implements OnInit {
-
-  constructor() { }
+  alarm: Alarm = new Alarm();
+  constructor(private route: ActivatedRoute, private alarmsService: AlarmsService, private router: Router) { }
 
   ngOnInit() {
+    // this.route.params
+    //   .switchMap((params: Params) => this.alarmsService.getAlarm(+params['id']))
+    //   .subscribe((alarm: Alarm) => {
+    //     this.alarm = alarm;
+    //     console.log(alarm);
+    //   });
   }
 
 }

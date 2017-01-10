@@ -1,3 +1,26 @@
-<p>
-  alarms-list works!
-</p>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Description</th>
+          <th>Recurrence</th>
+          <th>Track</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let alarm of alarms">
+        <td>{{alarm.time}}</td>
+        <td>{{alarm.description}}</td>
+        <td>{{alarm.recurrence}}</td>
+        <td>{{alarm.track.artist + " - " + alarm.track.track_name}}</td>      
+      </tr>
+    </tbody>
+
+</table>
+  <ul>
+  <!--<a routerLink ="list\detail">detail</a>-->
+    <li *ngFor="let alarm of alarms" (click)="gotoAlarm(alarm)">
+      Time: {{ alarm.name }}   
+    </li>
+  </ul>

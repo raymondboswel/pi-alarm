@@ -17,7 +17,7 @@ const appRoutes: Routes = [
       children: [
         {path: '', component: AlarmsListComponent},
         {path: 'list', component: AlarmsListComponent},
-        {path: 'detail', component: AlarmsDetailComponent},
+        {path: 'detail/:id', component: AlarmsDetailComponent}
       ]},
     {path: 'Tracks', component: TracksComponent},
     {path: 'Journal', component: JournalComponent},

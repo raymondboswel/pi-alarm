@@ -1,5 +1,9 @@
+import { Track } from '../tracks/shared/track';
+
 export class Alarm {
-
-  name: string;
-
+  description: string = '';
+  time: number = 0;
+  id: string= '';
+  date: string = '';
+  track: Track = new Track();
 }
