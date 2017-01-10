@@ -13,7 +13,8 @@
         <td>{{alarm.time}}</td>
         <td>{{alarm.description}}</td>
         <td>{{alarm.recurrence}}</td>
-        <td>{{alarm.track.artist + " - " + alarm.track.track_name}}</td>              
+        <td>{{alarm.track.artist + " - " + alarm.track.track_name}}</td>    
+        <td><button class='btn'  (click)="gotoAlarm(alarm)">Edit</button>          
       </tr>
     </tbody>
 

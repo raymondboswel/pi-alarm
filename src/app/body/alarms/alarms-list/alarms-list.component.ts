@@ -27,4 +27,6 @@ export class AlarmsListComponent implements OnInit {
     this.router.navigate(['/Alarms/detail', alarm.id]);
   }
 
+  
+
 }
