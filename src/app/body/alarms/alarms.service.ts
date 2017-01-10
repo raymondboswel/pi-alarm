@@ -22,6 +22,15 @@ export class AlarmsService {
     });
   }
 
+  public getAlarm(id: string): Observable<Alarm> {
+    return this.http.get(this.url + `api/alarms/${id}`)
+        .map(res => {
+            let json = res.json() 
+            console.log(json);
+            return res.json().data;
+    });
+  }
+
 
   //static service
 //   public getAlarm(id: number): Observable<Alarm> {

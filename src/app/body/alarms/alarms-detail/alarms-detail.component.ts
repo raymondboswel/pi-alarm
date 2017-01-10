@@ -11,15 +11,20 @@ import 'rxjs/add/operator/switchMap';
 })
 export class AlarmsDetailComponent implements OnInit {
   alarm: Alarm = new Alarm();
+  id: string='';
   constructor(private route: ActivatedRoute, private alarmsService: AlarmsService, private router: Router) { }
 
   ngOnInit() {
-    // this.route.params
-    //   .switchMap((params: Params) => this.alarmsService.getAlarm(+params['id']))
-    //   .subscribe((alarm: Alarm) => {
-    //     this.alarm = alarm;
-    //     console.log(alarm);
-    //   });
+     this.route.params.forEach((params: Params) => {
+      this.id = params['id']; 
+    });
+
+    if(this.id != undefined) {
+      this.alarmsService.getAlarm(this.id).subscribe( res => {
+        this.alarm = res;
+      });
+    }
+   
   }
 
 }
