@@ -17,7 +17,8 @@ export class AlarmsListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.AlarmsService.getAlarms().subscribe( res => {
+    this.AlarmsService.getStaticAlarms().subscribe( res => {
+      console.log(res);
       this.alarms = res;
     });
 

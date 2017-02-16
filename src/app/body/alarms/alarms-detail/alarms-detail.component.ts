@@ -12,6 +12,8 @@ import 'rxjs/add/operator/switchMap';
 export class AlarmsDetailComponent implements OnInit {
   alarm: Alarm = new Alarm();
   id: string='';
+  date: any;
+  private showDatePicker: boolean;
   constructor(private route: ActivatedRoute, private alarmsService: AlarmsService, private router: Router) { }
 
   ngOnInit() {
@@ -24,7 +26,26 @@ export class AlarmsDetailComponent implements OnInit {
         this.alarm = res;
       });
     }
+    
    
   }
 
+  toggleDatePicker(status: boolean): void  {
+    this.showDatePicker = status;
+  }
+    
+  setDate(date: any): void {
+    this.date = date;
+  }
+
+  private time: any;
+  private showTimePicker: boolean;
+    
+  toggleTimePicker(status: boolean): void  {
+    this.showTimePicker = status;
+  }
+    
+  setTime(time: any): void {
+    this.time = time;
+  }
 }

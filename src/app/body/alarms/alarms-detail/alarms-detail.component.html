@@ -1,4 +1,23 @@
-<p>
-  alarms-detail works!
-  {{alarm.description}}
-</p>
+<div class="form-group">
+  <label for="exampleInputEmail1">Description</label>
+  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Description">
+</div>
+
+<div class="form-group">
+  <label for="exampleInputEmail1">Date</label>
+  <input [ngModel]="date" (focus)="toggleDatePicker(true)" readonly />
+  <date-picker *ngIf="showDatePicker" [initDate]="date"
+           (onDatePickerCancel)="toggleDatePicker($event)"
+           (onSelectDate)="setDate($event)"></date-picker>
+</div>
+
+<div class="form-group">
+  <label for="exampleInputEmail1">Time</label>
+  <input [ngModel]="time" (focus)="toggleTimePicker(true)" readonly />
+    <time-picker *ngIf="showTimePicker" [initTime]="time"
+              (onTimePickerCancel)="toggleTimePicker($event)"
+              (onSelectTime)="setTime($event)"></time-picker>
+</div>
+
+<button class="btn">Save</button>
+

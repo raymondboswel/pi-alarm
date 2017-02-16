@@ -17,11 +17,5 @@
         <td><button class='btn'  (click)="gotoAlarm(alarm)">Edit</button>          
       </tr>
     </tbody>
-
 </table>
-  <ul>
-  <!--<a routerLink ="list\detail">detail</a>-->
-    <li *ngFor="let alarm of alarms" (click)="gotoAlarm(alarm)">
-      Time: {{ alarm.name }}   
-    </li>
-  </ul>
+
